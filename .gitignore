@@ -37,3 +37,5 @@ web/docs/public
 *.map
 jsx-compiled
 dist
+
+*lock*

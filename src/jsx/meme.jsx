@@ -224,6 +224,7 @@ class MEME extends React.Component {
         rows={self.state.rows}
       />;
     }
+
     return (
       <div>
         <NavBar />

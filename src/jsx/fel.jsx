@@ -9,6 +9,7 @@ import { ScrollSpy } from "./components/scrollspy.jsx";
 import CopyToClipboard from "react-copy-to-clipboard";
 
 var FEL = React.createClass({
+
   definePlotData: function(x_label, y_label) {
 
     var x = _.map(this.state.mle_results, function(d) {

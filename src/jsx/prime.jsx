@@ -308,8 +308,11 @@ class PRIME extends React.Component {
     var order_table_rows = _.unzip(this.state.table_property_values);
 
     return (
+
       <div>
+
         <NavBar />
+
         <div className="container">
           <div className="row">
             <ScrollSpy info={scrollspy_info} />
