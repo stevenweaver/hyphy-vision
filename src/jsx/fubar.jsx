@@ -165,9 +165,12 @@ class FUBAR extends React.Component {
 
               <div id="fubar-rate-class-plot" className="row hyphy-row">
                 <h3 className="dm-table-header">Rate class weight</h3>
-                <DatamonkeySurfacePlot
-                  coords={this.state.coords}
-                />
+								<div id="surface-plot" style={{minHeight:"500px", maxHeight:"750px", height: "700px", overflow:"hidden"}}>
+									<DatamonkeySurfacePlot
+										coords={this.state.coords}
+										title={"hi"}
+									/>
+								</div>
               </div>
 
               <div id="fubar-mcmc-trace-tab" className="row hyphy-row">

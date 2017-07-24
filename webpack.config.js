@@ -95,7 +95,15 @@ config = {
           fallback: "style-loader",
           use: ["css-loader", "less-loader"]
         })
-      }
+      },
+      {
+        test: /\.glsl$/,
+        loader: "webpack-glsl-loader"
+      },
+			{
+        test: /node_modules/,
+        loader: 'ify-loader'
+			}
     ]
   },
   plugins: [

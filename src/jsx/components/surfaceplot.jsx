@@ -1,164 +1,95 @@
 var React = require("react"),
-  _ = require("underscore"),
-  THREE = require("three");
+  _ = require("underscore");
+
+var createScene       = require('gl-plot3d');
+var createSurfacePlot = require('gl-surface3d');
+var ndarray           = require('ndarray');
+var fill              = require('ndarray-fill');
+var diric             = require('dirichlet');
 
 class SurfacePlot extends React.Component {
+
   constructor(props) {
     super(props);
-    this.animate = this.animate.bind(this);
-    this.props.renderer.setSize(960, 840);
-    this.props.renderer.setClearColor("white", 1);
 
-    this.state = {};
-  }
+		var z1 = [
+    [8.83,8.89,8.81,8.87,8.9,8.87],
+    [8.89,8.94,8.85,8.94,8.96,8.92],
+    [8.84,8.9,8.82,8.92,8.93,8.91],
+    [8.79,8.85,8.79,8.9,8.94,8.92],
+    [8.79,8.88,8.81,8.9,8.95,8.92],
+    [8.8,8.82,8.78,8.91,8.94,8.92],
+    [8.75,8.78,8.77,8.91,8.95,8.92],
+    [8.8,8.8,8.77,8.91,8.95,8.94],
+    [8.74,8.81,8.76,8.93,8.98,8.99],
+    [8.89,8.99,8.92,9.1,9.13,9.11],
+    [8.97,8.97,8.91,9.09,9.11,9.11],
+    [9.04,9.08,9.05,9.25,9.28,9.27],
+    [9,9.01,9,9.2,9.23,9.2],
+    [8.99,8.99,8.98,9.18,9.2,9.19],
+    [8.93,8.97,8.97,9.18,9.2,9.18]
+		];
 
-  animate() {
-    requestAnimationFrame(this.animate);
-		this.mesh.rotation.y += 0.01;
-		this.mesh.rotation.x += 0.01;
-    this.props.renderer.render(this.props.scene, this.props.camera);
+    var data = [
+      {
+        z: z1,
+        type: "surface"
+      }
+    ];
+
+    var layout = {
+      title: this.props.title,
+      autosize: false,
+      width: this.props.width,
+      height: this.props.height,
+      margin: {
+        l: this.props.marginLeft,
+        r: this.props.marginRight,
+        b: this.props.marginBottom,
+        t: this.props.marginTop
+      }
+    };
+
+    this.state = { data: data, layout: layout };
+
   }
 
   renderPlot(canvas) {
 
-		var getColor = function(max,min,val){
-				var MIN_L=40,MAX_L=100;
-				var color = new THREE.Color();
-				var h = 0/240;
-				var s = 80/240;
-				var l = (((MAX_L-MIN_L)/(max-min))*5)/240;
-				color.setHSL(h,s,l);
-				return color;
-		};
+		var scene = createScene({canvas: canvas});
 
-    canvas.appendChild(this.props.renderer.domElement);
+		var field = ndarray(new Float32Array(512*512), [512,512]);
+		fill(field, function(x,y) {
+			return 128 * diric(10, 10.0*(x-256)/512) * diric(10, 10.0*(y-256)/512);
+		});
+		
+		var surface = createSurfacePlot({
+					gl: scene.gl,
+					field: field,
+					contourProject: true
+				});
 
-    var begin = 0;
-    var end = 20;
-    var width = end - begin;
-		var height = width;
+		scene.add(surface);
 
-    var plane_geometry = new THREE.PlaneGeometry(20, 20);
-    var plane_material = new THREE.MeshLambertMaterial({
-      color: 0xf0f0f0,
-      shading: THREE.FlatShading,
-      overdraw: 0.5,
-      side: THREE.DoubleSide
-    });
-
-    this.plane = new THREE.Mesh(plane_geometry, plane_material);
-    //this.props.scene.add(this.plane);
-
-    var geometry = new THREE.Geometry();
-    var colors = [];
-
-    _.each(this.props.coords, (d, i) => {
-      var vector = new THREE.Vector3(d[0], d[1], d[2]);
-      geometry.vertices.push(vector);
-			colors.push(getColor(2.5,0,d[2]));
-    });
-
-    var offset = function(x, y) {
-      return x * width + y;
-    };
-
-    for (var x = 0; x < width - 1; x++) {
-      for (var y = 0; y < height - 1; y++) {
-        var vec0 = new THREE.Vector3(),
-          vec1 = new THREE.Vector3(),
-          n_vec = new THREE.Vector3();
-        // one of two triangle polygons in one rectangle
-        vec0.subVectors(
-          geometry.vertices[offset(x, y)],
-          geometry.vertices[offset(x + 1, y)]
-        );
-        vec1.subVectors(
-          geometry.vertices[offset(x, y)],
-          geometry.vertices[offset(x, y + 1)]
-        );
-        n_vec.crossVectors(vec0, vec1).normalize();
-        geometry.faces.push(
-          new THREE.Face3(
-            offset(x, y),
-            offset(x + 1, y),
-            offset(x, y + 1),
-            n_vec,
-            [
-              colors[offset(x, y)],
-              colors[offset(x + 1, y)],
-              colors[offset(x, y + 1)]
-            ]
-          )
-        );
-        geometry.faces.push(
-          new THREE.Face3(
-            offset(x, y),
-            offset(x, y + 1),
-            offset(x + 1, y),
-            n_vec.negate(),
-            [
-              colors[offset(x, y)],
-              colors[offset(x, y + 1)],
-              colors[offset(x + 1, y)]
-            ]
-          )
-        );
-        // the other one
-        vec0.subVectors(
-          geometry.vertices[offset(x + 1, y)],
-          geometry.vertices[offset(x + 1, y + 1)]
-        );
-        vec1.subVectors(
-          geometry.vertices[offset(x, y + 1)],
-          geometry.vertices[offset(x + 1, y + 1)]
-        );
-        n_vec.crossVectors(vec0, vec1).normalize();
-        geometry.faces.push(
-          new THREE.Face3(
-            offset(x + 1, y),
-            offset(x + 1, y + 1),
-            offset(x, y + 1),
-            n_vec,
-            [
-              colors[offset(x + 1, y)],
-              colors[offset(x + 1, y + 1)],
-              colors[offset(x, y + 1)]
-            ]
-          )
-        );
-        geometry.faces.push(
-          new THREE.Face3(
-            offset(x + 1, y),
-            offset(x, y + 1),
-            offset(x + 1, y + 1),
-            n_vec.negate(),
-            [
-              colors[offset(x + 1, y)],
-              colors[offset(x, y + 1)],
-              colors[offset(x + 1, y + 1)]
-            ]
-          )
-        );
-      }
-    }
-
- 		var material = new THREE.MeshLambertMaterial({ vertexColors: THREE.VertexColors});
-		this.mesh = new THREE.Mesh(geometry, material);
-		this.props.scene.add(this.mesh);
-
-    this.props.camera.position.z = 35;
-    this.animate();
   }
+
+	componentDidMount() {
+		d3.selectAll('canvas').style({position:'relative'});
+	}
 
   render() {
-    return <div ref={this.renderPlot.bind(this)} />;
+    return (<canvas id="surface" style={{width:this.props.width, height:this.props.height}} ref={this.renderPlot.bind(this)}></canvas>);
   }
+
 }
 
 SurfacePlot.defaultProps = {
-  scene: new THREE.Scene(),
-  camera: new THREE.PerspectiveCamera(75, 960 / 840, 0.1, 1000),
-  renderer: new THREE.WebGLRenderer()
+  width: 500,
+  height: 500,
+  marginLeft: 65,
+  marginRight: 50,
+  marginTop: 90,
+  marginBottom: 65
 };
 
 module.exports.DatamonkeySurfacePlot = SurfacePlot;
