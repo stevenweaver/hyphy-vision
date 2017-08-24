@@ -4,7 +4,6 @@ var React = require("react"),
 
 import { DatamonkeyTable } from "./components/tables.jsx";
 import { DatamonkeySeries, DatamonkeyGraphMenu } from "./components/graphs.jsx";
-import { NavBar } from "./components/navbar.jsx";
 import { ScrollSpy } from "./components/scrollspy.jsx";
 import CopyToClipboard from "react-copy-to-clipboard";
 

@@ -10,7 +10,6 @@ import {
   DatamonkeyModelTable,
   DatamonkeyTimersTable
 } from "./components/tables.jsx";
-import { NavBar } from "./components/navbar.jsx";
 import { ScrollSpy } from "./components/scrollspy.jsx";
 import { DatamonkeyScatterplot, DatamonkeySeries } from "./components/graphs.jsx";
 import { InputInfo } from "./components/input_info.jsx";

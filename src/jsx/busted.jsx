@@ -8,7 +8,6 @@ var React = require("react"),
 
 import { Tree } from "./components/tree.jsx";
 import { PropChart } from "./components/prop_chart.jsx";
-import { NavBar } from "./components/navbar.jsx";
 import { ScrollSpy } from "./components/scrollspy.jsx";
 import { DatamonkeyTable } from "./components/tables.jsx";
 import { saveSvgAsPng } from "save-svg-as-png";

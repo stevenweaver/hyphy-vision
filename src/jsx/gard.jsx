@@ -4,7 +4,6 @@ var React = require('react'),
   _ = require("underscore");
 
 import { Tree } from "./components/tree.jsx";
-import { NavBar } from "./components/navbar.jsx";
 import { ScrollSpy } from "./components/scrollspy.jsx";
 import { InputInfo } from "./components/input_info.jsx";
 import { ErrorMessage } from "./components/error_message.jsx";

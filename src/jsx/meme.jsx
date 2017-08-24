@@ -6,7 +6,6 @@ var React = require("react"),
 import { InputInfo } from "./components/input_info.jsx";
 import { DatamonkeyTable, DatamonkeyModelTable } from "./components/tables.jsx";
 import { DatamonkeySiteGraph } from "./components/graphs.jsx";
-import { NavBar } from "./components/navbar.jsx";
 import { ScrollSpy } from "./components/scrollspy.jsx";
 
 class MEMESummary extends React.Component {
