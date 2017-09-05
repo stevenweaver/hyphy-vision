@@ -94,7 +94,7 @@ class RateMatrix extends React.Component {
             .attr('dy', '.5em')
             .attr('font-size', (number_of_characters == 4 ? 14 : 10))
             .attr('font-weight', 'normal')
-            .text(rate_matrix[j][i].toFixed(2));
+            .text(parseFloat(rate_matrix[j][i]).toFixed(2));
         }
       }
     }
