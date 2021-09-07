@@ -1744,9 +1744,9 @@
   integrity sha512-HBHtruB7hcNqyapyNF77fPVpiCyqEZsmLD6rhCy7nHPaciAEPML4NtQG2QBuTkYlEu64Zulky6g3ABrD0PhX2Q==
 
 "@observablehq/runtime@4":
-  version "4.12.0"
-  resolved "https://registry.yarnpkg.com/@observablehq/runtime/-/runtime-4.12.0.tgz#1e179fc43509fa3fae0b951c6a066faf4588c5e7"
-  integrity sha512-aru9EPpXswVhEo2Vo5d2mhu+Px0LuIidCx+4w6RjhGWZE+wrssJEcheQjndu/RBP/awmTh0ayNWfKUjCq62RIQ==
+  version "4.16.1"
+  resolved "https://registry.yarnpkg.com/@observablehq/runtime/-/runtime-4.16.1.tgz#e88bffe449a57bf03b37164eb37b364746a7d6d8"
+  integrity sha512-okYZ4xje6rWFf2oDEiabDnkKjUFAgOnfhzJKzUn/Khzkx1a5V9kubMyQf20aOtCB5+m2jaudAkxsJr4oJ8seaQ==
   dependencies:
     "@observablehq/inspector" "^3.2.2"
     "@observablehq/stdlib" "^3.4.1"
@@ -7390,15 +7390,6 @@ jest-watcher@^27.1.0:
     string-length "^4.0.1"
 
 jest-worker@^27.0.6, jest-worker@^27.1.0:
-  version "27.1.0"
-  resolved "https://registry.yarnpkg.com/jest-worker/-/jest-worker-27.1.0.tgz#65f4a88e37148ed984ba8ca8492d6b376938c0aa"
-  integrity sha512-mO4PHb2QWLn9yRXGp7rkvXLAYuxwhq1ZYUo0LoDhg8wqvv4QizP1ZWEJOeolgbEgAWZLIEU0wsku8J+lGWfBhg==
-  dependencies:
-    "@types/node" "*"
-    merge-stream "^2.0.0"
-    supports-color "^8.0.0"
-
-jest-worker@^27.1.0:
   version "27.1.0"
   resolved "https://registry.yarnpkg.com/jest-worker/-/jest-worker-27.1.0.tgz#65f4a88e37148ed984ba8ca8492d6b376938c0aa"
   integrity sha512-mO4PHb2QWLn9yRXGp7rkvXLAYuxwhq1ZYUo0LoDhg8wqvv4QizP1ZWEJOeolgbEgAWZLIEU0wsku8J+lGWfBhg==
