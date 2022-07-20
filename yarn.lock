@@ -2443,7 +2443,7 @@ ajv@^8.0.1:
     require-from-string "^2.0.2"
     uri-js "^4.2.2"
 
-alignment.js@^0.3.0:
+alignment.js@0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/alignment.js/-/alignment.js-0.3.0.tgz#2e5ba23024244cc8b4a069d8b2bb77b62b0aebdf"
   integrity sha512-rmLywM0NcFYtZPZm1ETO58kjoKFzfhZAWJouCKFWoTl0PfVCQ/oYtIhwjnxinD3FXwCfRJY8TCS6P0DnDuGbsg==
@@ -10282,9 +10282,9 @@ react-phylotree@0.4.3:
     underscore "^1.9.1"
 
 react-range@^1.8.9:
-  version "1.8.12"
-  resolved "https://registry.yarnpkg.com/react-range/-/react-range-1.8.12.tgz#61fe79421a519a4d77c76838012d895b75ead42f"
-  integrity sha512-vY2eCNDvKlXtEpl8xx5AQVIBeE4ZZ46dLVL+82f4FcS9XrPqz4+XagPHmq3IPqYuVQ2H4b8UArXzvVAsd/B03Q==
+  version "1.8.14"
+  resolved "https://registry.yarnpkg.com/react-range/-/react-range-1.8.14.tgz#11047f69b365ac6c75c3d715771ebe76b93982ec"
+  integrity sha512-v2nyD5106rHf9dwHzq+WRlhCes83h1wJRHIMFjbZsYYsO6LF4mG/mR3cH7Cf+dkeHq65DItuqIbLn/3jjYjsHg==
 
 react-router-dom@5.1.2:
   version "5.1.2"
