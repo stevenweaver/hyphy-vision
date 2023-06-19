@@ -1755,10 +1755,6 @@
   version "991.0.0"
   resolved "https://api.observablehq.com/@hyphy_software/multi-hit-analysis-result-visualization.tgz?v=3#2820864121de428e2dced549380dc2b41aeae76a"
 
-"@hyphy_software/nrm@https://api.observablehq.com/@hyphy_software/nrm@1567.tgz?v=3":
-  version "1567.0.0"
-  resolved "https://api.observablehq.com/@hyphy_software/nrm@1567.tgz?v=3#625cbf728969e6dea0094fd2da66dfbb8573d698"
-
 "@hyphy_software/nrm@https://api.observablehq.com/@hyphy_software/nrm@1568.tgz?v=3":
   version "1568.0.0"
   resolved "https://api.observablehq.com/@hyphy_software/nrm@1568.tgz?v=3#b4cec5fd0e0c4dd633716c92d9740bc04308436c"
@@ -6744,9 +6740,9 @@ html-minifier-terser@^6.0.2:
     terser "^5.10.0"
 
 html-webpack-plugin@^5.3.2:
-  version "5.5.0"
-  resolved "https://registry.yarnpkg.com/html-webpack-plugin/-/html-webpack-plugin-5.5.0.tgz#c3911936f57681c1f9f4d8b68c158cd9dfe52f50"
-  integrity sha512-sy88PC2cRTVxvETRgUHFrL4No3UxvcH8G1NepGhqaTT+GXN2kTamqasot0inS5hXeg1cMbFDt27zzo9p35lZVw==
+  version "5.5.3"
+  resolved "https://registry.yarnpkg.com/html-webpack-plugin/-/html-webpack-plugin-5.5.3.tgz#72270f4a78e222b5825b296e5e3e1328ad525a3e"
+  integrity sha512-6YrDKTuqaP/TquFH7h4srYWsZx+x6k6+FbsTm0ziCwGHDP78Unr1r9F/H4+sGmMbX08GQcJ+K64x55b+7VM/jg==
   dependencies:
     "@types/html-minifier-terser" "^6.0.0"
     html-minifier-terser "^6.0.2"
