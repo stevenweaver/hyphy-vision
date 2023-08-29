@@ -1755,10 +1755,6 @@
   version "991.0.0"
   resolved "https://api.observablehq.com/@hyphy_software/multi-hit-analysis-result-visualization.tgz?v=3#2820864121de428e2dced549380dc2b41aeae76a"
 
-"@hyphy_software/nrm@https://api.observablehq.com/@hyphy_software/nrm@1567.tgz?v=3":
-  version "1567.0.0"
-  resolved "https://api.observablehq.com/@hyphy_software/nrm@1567.tgz?v=3#625cbf728969e6dea0094fd2da66dfbb8573d698"
-
 "@hyphy_software/nrm@https://api.observablehq.com/@hyphy_software/nrm@1568.tgz?v=3":
   version "1568.0.0"
   resolved "https://api.observablehq.com/@hyphy_software/nrm@1568.tgz?v=3#b4cec5fd0e0c4dd633716c92d9740bc04308436c"
@@ -7960,9 +7956,9 @@ jquery@1.x:
   integrity sha1-AeHfuikP5z3rp3zurLD5ui/sngw=
 
 jquery@3, jquery@3.x, "jquery@>=1.8.0 <4.0.0", jquery@^3.3.1:
-  version "3.6.1"
-  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.6.1.tgz#fab0408f8b45fc19f956205773b62b292c147a16"
-  integrity sha512-opJeO4nCucVnsjiXOE+/PcCgYw9Gwpvs/a6B1LL/lQhwWwpbVEVYDZ1FokFr8PRc7ghYlrFPuyHuiiDNTQxmcw==
+  version "3.7.1"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.7.1.tgz#083ef98927c9a6a74d05a6af02806566d16274de"
+  integrity sha512-m4avr8yL8kmFN8psrbFFFmB/If14iN5o9nw/NgnnM+kybDJpRsAynV2BsfpTYrTRysYUdADVD7CkUUizgkpLfg==
 
 js-base64@^2.1.9, js-base64@^2.4.3:
   version "2.6.4"
