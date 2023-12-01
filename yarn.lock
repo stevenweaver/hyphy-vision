@@ -1755,10 +1755,6 @@
   version "991.0.0"
   resolved "https://api.observablehq.com/@hyphy_software/multi-hit-analysis-result-visualization.tgz?v=3#2820864121de428e2dced549380dc2b41aeae76a"
 
-"@hyphy_software/nrm@https://api.observablehq.com/@hyphy_software/nrm@1567.tgz?v=3":
-  version "1567.0.0"
-  resolved "https://api.observablehq.com/@hyphy_software/nrm@1567.tgz?v=3#625cbf728969e6dea0094fd2da66dfbb8573d698"
-
 "@hyphy_software/nrm@https://api.observablehq.com/@hyphy_software/nrm@1568.tgz?v=3":
   version "1568.0.0"
   resolved "https://api.observablehq.com/@hyphy_software/nrm@1568.tgz?v=3#b4cec5fd0e0c4dd633716c92d9740bc04308436c"
@@ -2103,9 +2099,9 @@
     isoformat "^0.2.0"
 
 "@observablehq/runtime@5":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@observablehq/runtime/-/runtime-5.0.0.tgz#58bea0ede1742c8bc06cedbc05423317d83e5c12"
-  integrity sha512-xdxyXdn68gUKZb2CLRfy2GbaCltSsZQZmk44b6mGT+/eazAilwWkGX4EwdlDKcH6t81pJS4qvh50UsZlm44Tug==
+  version "5.9.5"
+  resolved "https://registry.yarnpkg.com/@observablehq/runtime/-/runtime-5.9.5.tgz#96032d2e0fb8d3c0cb35fbc84229e21b710e70d8"
+  integrity sha512-cVjqjhwiDBsX9TokNCsg/+H+74JvneX58ExF8mUAtNVkBN7+eaiqYP450xaObruSwEbdm3+IuJe/gTrcET98dg==
   dependencies:
     "@observablehq/inspector" "^5.0.0"
     "@observablehq/stdlib" "^5.0.0"
