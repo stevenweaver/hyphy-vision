@@ -80,7 +80,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/free-regular-svg-icons": "^5.15.3",
-    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@open-wc/webpack-import-meta-loader": "^0.4.7",
     "assert": "^2.0.0",
     "babel-loader": "^8.0.6",
